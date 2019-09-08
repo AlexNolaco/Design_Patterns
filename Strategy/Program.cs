@@ -15,8 +15,9 @@ namespace Strategy
             IImposto iss = new ISS();
             IImposto icms = new ICMS();
             IImposto xpto = new XPTO();
+            IImposto example = new Example();
             /*fim da injeção*/
-            
+
             Orcamento orcamento = new Orcamento(500.0);
             CalculadorDeImpostos context;
 
@@ -29,6 +30,8 @@ namespace Strategy
             context = new CalculadorDeImpostos(xpto);
             context.RealizaCalculo(orcamento);
 
+            context = new CalculadorDeImpostos(example);
+            context.RealizaCalculo(orcamento);
         }
     }
 }
